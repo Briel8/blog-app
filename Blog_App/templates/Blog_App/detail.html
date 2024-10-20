@@ -1,0 +1,13 @@
+{% extends 'Blog_App/base.html' %}
+
+
+
+{% block content %}
+  <h1>{{post}}:</h1>
+
+  {% for comment in post.comment_set.all %}
+    <p>- {{comment}}</p>
+  {% empty %}
+    <p>There are no comments yet for this post.</p>
+  {% endfor %}
+{% endblock content %}
